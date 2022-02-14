@@ -19,6 +19,7 @@ int dayofweek(int day, int month, int year)
 }
 
 // Take month and year and return how many days the month has, also checks for leap year
+// takes value 1 - 12 for month
 int getMonthDays(int month, int year)
 {
     int month_array[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -37,16 +38,20 @@ void displayMonth(int month, int year)
 {
     int count = dayofweek(1, month, year);
     
-    printf(" %s\n", months_Name[month-1]);
-    printf(" Su Mo Tu We Th Fr Sa\n");
+    printf(" %3s                   \n", months_Name[month-1]);
+    printf("|----------------------|\n");
+    printf("| Su Mo Tu We Th Fr Sa |\n|");
 
+    // printing extra space over the days that dont exist in month
     for (int i = 0; i < dayofweek(1, month, year); i++)
     {
         printf("   ");
     }
 
+    // for every day in month
     for (int i = 1; i <= getMonthDays(month, year); i++)
     {
+        // for every day in week
         for (int x = 0; x < 7; x++)
         {
             if (x == dayofweek(i, month, year))
@@ -59,7 +64,7 @@ void displayMonth(int month, int year)
 
         if (count == 7)
         {
-            printf("\n");
+            printf(" |\n|");
             count = 0;
         }
     }
@@ -68,18 +73,20 @@ void displayMonth(int month, int year)
  // Take year and display all the months
 void displayYear(int year)
 {
-    int month_counter = 0;
+    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("| %48d                                          |\n", year);
+    int month_counter = 1;
     // for every 4 months
-    for (int x = 0; x < 1; x++)
+    for (int x = 0; x < 3; x++)
     {
-        int month_buffer[4][5][7] = { {{0}} };
+        int month_buffer[4][6][7] = { {{0}} };
         // for every month in buffer
         for (int month = 0; month < 4; month++)
         {
-            int count = dayofweek(1, month, year);
+            int count = dayofweek(1, month + month_counter, year);
             int week = 0;
             // for every day in month
-            for (int date = 1; date <= getMonthDays(month, year); date++)
+            for (int date = 1; date <= getMonthDays(month + month_counter, year); date++)
             {
                 // checking if date = day of week
                 for (int x = 0; x < 7; x++)
@@ -100,22 +107,37 @@ void displayYear(int year)
             }
         }
 
-        printf(" January                February               March\n");
+        
+        printf("+-------------------------------------------------------------------------------------------+\n");
+        printf("| %-20s | %-20s | %-20s | %-20s |\n", months_Name[month_counter - 1], months_Name[month_counter], months_Name[month_counter + 1], months_Name[month_counter + 2]);
+        printf("|-------------------------------------------------------------------------------------------|\n");
+        printf("| Su Mo Tu We Th Fr Sa | Su Mo Tu We Th Fr Sa | Su Mo Tu We Th Fr Sa | Su Mo Tu We Th Fr Sa |\n");
         // for every week
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 6; i++)
         {
+            printf("|");
             // for every month
-            for (int j = 1; j < 4; j++)
+            for (int j = 0; j < 4; j++)
             {
                 // for every day
                 for (int c = 0; c < 7; c++)
                 {
-                    printf("%3i", month_buffer[j][i][c]);
+                    if (month_buffer[j][i][c] != 0)
+                    {
+                        printf("%3i", month_buffer[j][i][c]);
+                    }
+                    else
+                    {
+                        printf("   ");
+                    }
+                    
                 }
-                printf("  ");
+                printf(" |");
                 
             }
             printf("\n");
         }
+        month_counter = month_counter + 4;
     }
+    printf("+-------------------------------------------------------------------------------------------+\n");
 }
