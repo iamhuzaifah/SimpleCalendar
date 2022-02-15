@@ -36,27 +36,24 @@ int getMonthDays(int month, int year)
  // Take month and year and return a visual of the month with each date placed under the day it falls on
 void displayMonth(int month, int year)
 {
+    int month_Buffer[6][7] = { {0} };
     int count = dayofweek(1, month, year);
-    
-    printf(" %3s                   \n", months_Name[month-1]);
-    printf("|----------------------|\n");
-    printf("| Su Mo Tu We Th Fr Sa |\n|");
+    int week = 0;
 
-    // printing extra space over the days that dont exist in month
-    for (int i = 0; i < dayofweek(1, month, year); i++)
-    {
-        printf("   ");
-    }
+    printf("+----------------------+\n");
+    printf("| %-9s %10d |\n", months_Name[month-1], year);
+    printf("|----------------------|\n");
+    printf("| Su Mo Tu We Th Fr Sa |\n");
 
     // for every day in month
-    for (int i = 1; i <= getMonthDays(month, year); i++)
+    for (int date = 1; date <= getMonthDays(month, year); date++)
     {
-        // for every day in week
+        // checking if date = day of week
         for (int x = 0; x < 7; x++)
         {
-            if (x == dayofweek(i, month, year))
+            if (x == dayofweek(date, month, year))
             {
-                printf("%3i", i);
+                month_Buffer[week][count] = date;
             }
         }
 
@@ -64,17 +61,38 @@ void displayMonth(int month, int year)
 
         if (count == 7)
         {
-            printf(" |\n|");
             count = 0;
+            week++;
         }
     }
+
+    // for every week
+    for (int i = 0; i < 6; i++)
+    {
+        printf("|");
+
+        // for every day
+        for (int c = 0; c < 7; c++)
+        {
+            if (month_Buffer[i][c] != 0)
+            {
+                printf("%3i", month_Buffer[i][c]);
+            }
+            else
+            {
+                printf("   ");
+            }
+        }
+        printf(" |\n");
+    }
+    printf("+----------------------+\n");
 }
 
  // Take year and display all the months
 void displayYear(int year)
 {
     printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| %48d                                          |\n", year);
+    printf("| %47d                                           |\n", year);
     int month_counter = 1;
     // for every 4 months
     for (int x = 0; x < 3; x++)

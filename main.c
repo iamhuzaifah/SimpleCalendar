@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    displayYear(2022);
+    displayMonth(1, 2022);
     return 0;
 }
 
