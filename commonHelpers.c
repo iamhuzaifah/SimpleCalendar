@@ -88,21 +88,24 @@ void displayMonth(int month, int year)
     printf("+----------------------+\n");
 }
 
- // Take year and display all the months
+ // Takes year input and display all the months in a 4 x 3 grid
 void displayYear(int year)
 {
     printf("+-------------------------------------------------------------------------------------------+\n");
     printf("| %47d                                           |\n", year);
     int month_counter = 1;
+
     // for every 4 months
     for (int x = 0; x < 3; x++)
     {
         int month_buffer[4][6][7] = { {{0}} };
+
         // for every month in buffer
         for (int month = 0; month < 4; month++)
         {
             int count = dayofweek(1, month + month_counter, year);
             int week = 0;
+
             // for every day in month
             for (int date = 1; date <= getMonthDays(month + month_counter, year); date++)
             {
@@ -130,10 +133,12 @@ void displayYear(int year)
         printf("| %-20s | %-20s | %-20s | %-20s |\n", months_Name[month_counter - 1], months_Name[month_counter], months_Name[month_counter + 1], months_Name[month_counter + 2]);
         printf("|-------------------------------------------------------------------------------------------|\n");
         printf("| Su Mo Tu We Th Fr Sa | Su Mo Tu We Th Fr Sa | Su Mo Tu We Th Fr Sa | Su Mo Tu We Th Fr Sa |\n");
+
         // for every week
         for (int i = 0; i < 6; i++)
         {
             printf("|");
+
             // for every month
             for (int j = 0; j < 4; j++)
             {

@@ -1,0 +1,284 @@
+1/1/New Year's Day/Federal Holiday
+1/3/New Year's Day (substitute)/State holiday
+1/6/Epiphany/Christian
+1/7/Orthodox Christmas Day/Orthodox
+1/7/Estelle Reel Day/State Observation
+1/13/Stephen Foster Memorial Day/Observance
+1/14/Orthodox New Year/Orthodox
+1/17/Tu Bishvat/Tu B'Shevat/Jewish holiday
+1/17/Martin Luther King Jr. Day/Federal Holiday
+1/17/Robert E. Lee's Birthday/State holiday
+1/17/Idaho Human Rights Day/State holiday
+1/17/Civil Rights Day/State holiday
+1/19/Robert E. Lee's Birthday/State Legal Holiday
+1/19/Confederate Heroes' Day/State holiday
+1/29/Kansas Day	State/Observation
+2/13/Super Bowl/Sporting event
+2/14/Valentine's Day/Observance	 
+2/14/Statehood Day/Local observance	
+2/15/Susan B.Anthony's Birthday/State Observation
+2/16/Elizabeth Peratrovich Day/State Observation
+2/21/Presidents' Day/Federal Holiday	 
+2/21/Daisy Gatson Bates Day/State holiday
+2/25/George Rogers Clark Day/State Observation
+2/28/Maha Shivaratri/Hindu Holiday
+2/28/Linus Pauling Day/Local observance
+3/1/Isra and Mi'raj/Muslim	 
+3/1/Mardi Gras/State holiday	
+3/1/St.David's Day	Observance, Christian	 
+3/1/Town Meeting Day/State holiday
+3/1/First Day of Women's History Month/Annual 
+3/1/First Day of Irish American Heritage Month/Annual observance
+3/2/Ash Wednesday/Christian
+3/2/Texas Independence Day/State holiday
+3/2/Read Across America Day/Observance
+3/4/Casimir Pulaski Day	State/Observation
+3/4/Employee Appreciation Day/Observance
+3/7/Casimir Pulaski Day	State/Observation
+3/13/Daylight Saving Time starts/Clock change/Daylight Saving Time
+3/17/Purim/Jewish holiday
+3/17/St.Patrick's Day/Observance
+3/17/Evacuation Day/State holiday
+3/18/Holi/Hindu Holiday
+3/20/March Equinox/Season
+3/25/Maryland Day/Local observance
+3/25/Prince Jonah Kuhio Kalanianaole Day/observed State holiday
+3/26/Prince Jonah Kuhio Kalanianaole Day/State holiday
+3/28/Seward's Day/State holiday
+3/29/National Vietnam War Veterans Day/Observance
+3/30/Wyoming Veterans Welcome Home Day/State Observation
+3/30/Doctors' Day/Observance	 
+3/30/Vietnam Veterans Day/State Observation
+3/31/César Chávez Day/State holiday
+4/1/Pascua Florida Day/observed	Local observance
+4/2/Pascua Florida Day/Local observance
+4/3/Ramadan Starts/Muslim
+4/6/National Tartan Day/Observance
+4/10/Palm Sunday/Christian
+4/12/National Library Workers' Day/Observance	 
+4/13/Thomas Jefferson's Birthday/Observance	 
+4/14/Maundy Thursday/Christian
+4/15/Passover Eve/Jewish holiday
+4/15/Good Friday/State holiday
+4/15/Father Damien Day/Local observance
+4/15/Emancipation Day/observed State holiday
+4/15/Arbor Day/State Observation
+4/16/Holy Saturday/Christian
+4/16/Passover(first day)/Jewish holiday
+4/16/Emancipation Day/State holiday
+4/17/Easter Sunday/Observance, Christian
+4/18/Easter Monday/Observance, Christian
+4/18/Tax Day/Observance
+4/18/Patriots' Day/State holiday
+4/18/Boston Marathon/Sporting event
+4/21/San Jacinto Day/State holiday
+4/22/Orthodox Good Friday/Orthodox
+4/22/Oklahoma Day/Local observance
+4/23/Last Day of Passover/Jewish holiday
+4/23/Orthodox Holy Saturday/Orthodox
+4/24/Orthodox Easter/Orthodox
+4/25/Orthodox Easter Monday/Orthodox
+4/25/Arbor Day/State Observation
+4/25/Confederate Memorial Day/State holiday
+4/26/Confederate Heroes' Day/Local observance
+4/27/Yom HaShoah/Jewish commemoration
+4/27/Administrative Professionals Day/Observance
+4/28/Lailat al - Qadr/Muslim
+4/28/Take our Daughters and Sons to Work Day/Observance
+4/29/Arbor Day/State holiday
+4/29/Arbor Day/State Observation
+5/1/Law Day/Observance
+5/1/Loyalty Day/Observance
+5/1/Lei Day	Local/observance
+5/3/Eid al - Fitr(Tentative Date)/Muslim
+5/4/Kent State Shootings Remembrance/Local observance
+5/4/Rhode Island Independence Day/Local observance
+5/5/Yom Ha'atzmaut/Jewish holiday	 
+5/5/Cinco de Mayo/Observance
+5/5/National Day of Prayer/Observance
+5/5/West Virginia Day of Prayer	State/Observation
+5/6/Kentucky Oaks/Sporting event
+5/6/National Nurses Day/Observance
+5/6/Military Spouse Appreciation Day/Observance
+5/7/Kentucky Derby/Sporting event
+5/7/National Explosive Ordnance Disposal(EOD) Day/Observance
+5/8/Mother's Day/Observance	 
+5/8/Truman Day/State holiday
+5/8/Victory in Europe Day/Observance
+5/10/Confederate Memorial Day/Local observance
+5/10/Primary Election Day/State holiday
+5/13/Native American Day/State Observation
+5/15/Peace Officers Memorial Day/Observance
+5/19/Lag BaOmer/Jewish holiday
+5/20/National Defense Transportation Day/Observance
+5/21/Public Lands Day/State Observation
+5/21/Armed Forces Day/Observance
+5/21/Preakness Stakes/Sporting event
+5/22/National Maritime Day/Observance
+5/22/Harvey Milk Day/Local observance
+5/25/Emergency Medical Services for Children Day/Observance
+5/25/National Missing Children's Day/Observance	 
+5/26/Ascension Day/Christian
+5/30/Memorial Day/Federal Holiday
+5/30/Decoration Day/State holiday
+5/30/Jefferson Davis' Birthday/Local observance
+6/3/Jefferson Davis' Birthday/Local observance
+6/5/Pentecost/Christian
+6/5/Shavuot/Jewish holiday
+6/5/Native American Day/State holiday
+6/6/Whit Monday	Christian
+6/6/Jefferson Davis' Birthday/State holiday
+6/6/D - Day/Observance
+6/10/Kamehameha Day/observed State holiday
+6/11/Kamehameha Day/State holiday
+6/11/Belmont Stakes/Sporting event
+6/12/Trinity Sunday/Christian
+6/12/Bunker Hill Day/Local observance
+6/12/Loving Day/Observance
+6/14/Army Birthday/Observance
+6/14/Flag Day/Observance
+6/16/Corpus Christi	Christian
+6/18/Juneteenth Day	State/Observation
+6/19/Father's Day/Observance	 
+6/19/Father's Day/State holiday
+6/19/Juneteenth/Federal Holiday
+6/19/National Juneteenth Freedom Day/State holiday
+6/19/Juneteenth Independence Day/Observance
+6/19/Emancipation Day/State holiday
+6/20/Juneteenth(substitute)/Federal Holiday
+6/20/National Juneteenth Freedom Day(substitute)/State holiday
+6/20/West Virginia Day/State holiday
+6/20/American Eagle Day/Observance
+6/21/June Solstice/Season
+7/4/Independence Day/Federal Holiday
+7/10/Eid al - Adha(Tentative Date)/Muslim
+7/13/Nathan Bedford Forrest Day/Local observance
+7/14/Bastille Day/Observance
+7/16/Rural Transit Day/Observance
+7/24/Pioneer Day/State holiday
+7/24/Parents' Day/Observance	 
+7/25/Pioneer Day observed/State holiday
+7/27/Korean War Veteran Recognition Day/State Observation
+7/27/National Korean War Veterans Armistice Day/Observance
+7/30/Muharram/Muslim
+8/1/Colorado Day/State Observation
+8/4/Coast Guard Birthday/Observance
+8/4/Barack Obama Day/Observance
+8/7/Tisha B'Av/Jewish holiday	 
+8/7/American Family Day/State holiday
+8/7/Purple Heart Day/State Observation
+8/7/Purple Heart Day/Observance
+8/8/Ashura(Tentative Date)/Muslim
+8/8/Victory Day/State holiday
+8/11/Raksha Bandhan/Hindu Holiday
+8/14/National Navajo Code Talkers Day/State holiday
+8/15/Assumption of Mary	Christian
+8/16/Bennington Battle Day/State holiday
+8/19/Hawaii Statehood Day/State holiday
+8/19/National Aviation Day/Observance
+8/21/National Senior Citizens Day/Observance
+8/26/Susan B.Anthony's Birthday/State Observation
+8/26/Women's Equality Day/Observance	 
+8/27/Lyndon Baines Johnson Day/State holiday
+8/30/Ganesh Chaturthi/Hindu Holiday
+9/5/Labor Day/Federal Holiday
+9/9/California Admission Day/State holiday
+9/10/Carl Garner Federal Lands Cleanup Day/Observance
+9/10/Native American Day/State Observation
+9/11/First Responders Day/State Observation
+9/11/Patriot Day/State Observation
+9/11/Patriot Day/Observance
+9/11/National Grandparents Day/Observance
+9/11/Constitution Commemoration Day/State holiday
+9/16/Constitution Day and Citizenship Day observed/Observance
+9/16/National POW / MIA Recognition Da/	Observance
+9/17/Constitution Day and Citizenship Day/Observance
+9/17/National CleanUp Day/Observance
+9/18/Air Force Birthday/Observance
+9/22/Emancipation Day/Local observance
+9/22/September Equinox/Season
+9/23/Native American Day/State Observation
+9/23/Michigan Indian Day/State Observation
+9/24/Public Lands Day/State Observation
+9/24/National Public Lands Day/Observance
+9/25/Gold Star Mother's Day/Observance	 
+9/26/Navratri/Hindu Holiday
+9/26/Rosh Hashana/Jewish holiday
+9/26/American Indian Day/State Observation
+9/26/Rosh Hashana/State holiday
+9/30/American Indian Heritage Day/State Observation
+10/3/Frances Xavier Cabrini Day/State holiday
+10/3/Child Health Day/Observance
+10/4/Feast of St Francis of Assisi/Christian
+10/4/Dussehra/Hindu Holiday
+10/5/Yom Kippur/Jewish holiday
+10/8/The Prophet's Birthday/Muslim	 
+10/8/Robert E.Lee's Birthday/State Observation
+10/9/Leif Erikson Day/Observance
+10/10/First Day of Sukkot/Jewish holiday
+10/10/Columbus Day/Federal Holiday
+10/10/Fraternal Day/State holiday
+10/10/Yorktown Victory Day/State holiday
+10/10/Discoverers’ Day	State/Observation
+10/10/Native American Day/State holiday
+10/10/Indigenous People's Day/State holiday
+10/10/American Indian Heritage Day/State holiday
+10/11/Casimir Pulaski Day/State Observation
+10/13/Navy Birthday/Observance
+10/15/White Cane Safety Day/Observance
+10/15/Sweetest Day/Observance
+10/16/Last Day of Sukkot/Jewish holiday
+10/17/Shmini Atzeret/Jewish holiday
+10/17/Boss's Day/Observance	 
+10/18/Simchat Torah/Jewish holiday
+10/18/Alaska Day/State holiday
+10/24/Diwali/Hindu Holiday
+10/28/Nevada Day/State holiday
+10/31/Halloween/Observance
+11/1/All Saints' Day/Christian	 
+11/1/First Day of Native American Heritage Month/Annual observance
+11/2/All Souls' Day/Christian	 
+11/6/New York City Marathon/Sporting event
+11/6/Daylight Saving Time ends/Daylight Saving Time
+11/8/Election Day/Observance
+11/8/Susan B.Anthony's Birthday	State/Observation
+11/10/Marine Corps Birthday/Observance
+11/10/Return Day/State holiday
+11/11/Veterans Day/Federal Holiday
+11/14/Barack Obama Day/Local observance
+11/19/George Rogers Clark Day/State Observation
+11/24/Thanksgiving Day/Federal holiday
+11/25/State Holiday	State holiday/Georgia
+11/25/Presidents' Day/State holiday
+11/25/Lincoln's Birthday/Lincoln's Day/State holiday
+11/25/Day After Thanksgiving/State holiday
+11/25/Black Friday/Observance
+11/25/American Indian Heritage Day/State holiday
+11/25/Native American Heritage Day/Observance
+11/27/First Sunday of Advent/Christian
+11/28/Cyber Monday/Observance
+11/29/Nellie Tayloe Ross's Birthday/State Observation
+12/1/Rosa Parks Day	State/Observation
+12/6/St Nicholas Day/Observance
+12/7/yPearl Harbor Remembrance Day/State Observation
+12/7/Pearl Harbor Remembrance Day/Observance
+12/7/Delaware Day/State Observation
+12/8/Feast of the Immaculate Conception/Christian
+12/10/Wyoming Day/State Observation
+12/12/Feast of Our Lady of Guadalupe/Christian
+12/13/National Guard Birthday/Observance
+12/15/Bill of Rights Day/Observance
+12/17/Pan American Aviation Day/Observance
+12/17/Wright Brothers Day/Observance
+12/19/Hanukkah(first day)/Jewish holiday
+12/21/December Solstice/Season
+12/23/Christmas Eve observed/State holiday
+12/24/Christmas Eve/Christian
+12/25/Christmas Day/Federal Holiday
+12/25/Christmas Day/State holiday
+12/26/Last Day of Chanukah/Jewish holiday
+12/26/Kwanzaa(first day)/Observance
+12/26/Christmas Day(substitute)/Federal Holiday
+12/26/Day After Christmas Day/State holiday
+12/30/New Year's Eve observed/State holiday
+12/31/New Year's Eve/Observance	 

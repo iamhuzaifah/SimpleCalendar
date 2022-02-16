@@ -21,7 +21,7 @@
     <ClCompile Include="commonHelpers.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CalenderUI.c">
+    <ClCompile Include="CalendarUI.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,5 +29,13 @@
     <ClInclude Include="commonHelpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CalendarUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Holidays.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -4,7 +4,6 @@
 
 int main(void)
 {
-    displayMonth(1, 2022);
-    return 0;
+    
 }
 
