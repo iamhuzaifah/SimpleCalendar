@@ -3,8 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "CalendarUI.h"
+#include "commonHelpers.h"
 
 
+// takes holiday file and array and stores all the data
 void initializeHolidays(FILE *file, struct event_Detail input_Array[12][31][EVENTS_PER_DAY])
 {
 	char line[256];
@@ -42,5 +44,21 @@ void initializeHolidays(FILE *file, struct event_Detail input_Array[12][31][EVEN
 				break;
 			}
 	}
+	return;
 	
+}
+
+void userMenu(struct event_Detail input_Array[12][31][EVENTS_PER_DAY])
+{
+	int menu_Input = 0;
+	do
+	{
+		printf("=======================================\n");
+		printf("=           Simple Calender           =\n");
+		printf("=======================================\n");
+
+		menu_Input = getMenuInt(1, 10);
+	} while (menu_Input != 0);
+	
+
 }

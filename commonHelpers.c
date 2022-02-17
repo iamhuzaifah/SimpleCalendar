@@ -3,8 +3,10 @@
 Helper functions used throughout the program
 ============================================
 */
-
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdbool.h>
+#include "CalendarUI.h"
 
 char* days[7] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
 char* months_Name[12] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
@@ -31,6 +33,30 @@ int getMonthDays(int month, int year)
         }
     }
     return month_array[month - 1];
+}
+
+void blue() 
+{
+    printf("\033[0;34m");
+}
+
+void reset_colour() 
+{
+    printf("\033[0m");
+}
+
+void holidayDateDisplay(struct event_Detail input_Array[12][31][EVENTS_PER_DAY], int day, int month)
+{
+    if (input_Array[month - 1][day - 1][0].name != NULL)
+    {
+        blue();
+        printf("%3i", day);
+        reset_colour();
+    }
+    else
+    {
+        printf("%3i", day);
+    }
 }
 
  // Take month and year and return a visual of the month with each date placed under the day it falls on
@@ -89,11 +115,12 @@ void displayMonth(int month, int year)
 }
 
  // Takes year input and display all the months in a 4 x 3 grid
-void displayYear(int year)
+void displayYear(int year, struct event_Detail holiday_Array[12][31][EVENTS_PER_DAY])
 {
     printf("+-------------------------------------------------------------------------------------------+\n");
     printf("| %47d                                           |\n", year);
-    int month_counter = 1;
+    int month_counter = 1; // tracks the months for name
+    int month_tracker = 1; // tracks the months for date
 
     // for every 4 months
     for (int x = 0; x < 3; x++)
@@ -147,7 +174,8 @@ void displayYear(int year)
                 {
                     if (month_buffer[j][i][c] != 0)
                     {
-                        printf("%3i", month_buffer[j][i][c]);
+                        holidayDateDisplay(holiday_Array, month_buffer[j][i][c], month_counter + j);
+                        //printf("%3i", month_buffer[j][i][c]);
                     }
                     else
                     {
@@ -159,8 +187,51 @@ void displayYear(int year)
                 
             }
             printf("\n");
+            
         }
+        
         month_counter = month_counter + 4;
     }
     printf("+-------------------------------------------------------------------------------------------+\n");
+}
+
+void clearStandardInputBuffer(void)
+{
+    do
+    {
+        ;
+    } while (getchar() != '\n');
+}
+
+int getInteger(void)
+{
+    int input;
+    char line = 0;
+
+    while (line != '\n')
+    {
+        scanf("%d%c", &input, &line);
+        if (line != '\n')
+        {
+            clearStandardInputBuffer();
+            printf("ERROR: Value must be an integer: ");
+        }
+    }
+    return input;
+}
+
+int getMenuInt(int lower_bound, int upper_bound)
+{
+    int rnge;
+
+    do
+    {
+        rnge = getInteger();
+
+        if (rnge < lower_bound || rnge > upper_bound)
+        {
+            printf("ERROR: Value must be between %d and %d inclusive: ", lower_bound, upper_bound);
+        }
+    } while (rnge < lower_bound || rnge > upper_bound);
+    return rnge;
 }

@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 
 void initializeHolidays(FILE* file, struct event_Detail input_Array[12][31][EVENTS_PER_DAY]);
+void userMenu(struct event_Detail input_Array[12][31][EVENTS_PER_DAY]);
 
 struct dates
 {
