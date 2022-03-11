@@ -37,5 +37,8 @@
     <Text Include="Holidays.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="CustomEvents.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

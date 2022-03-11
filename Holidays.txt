@@ -206,7 +206,7 @@
 10/4/Feast of St Francis of Assisi/Christian
 10/4/Dussehra/Hindu Holiday
 10/5/Yom Kippur/Jewish holiday
-10/8/The Prophet's Birthday/Muslim	 
+10/8/The Prophet's Birthday/Muslim
 10/8/Robert E.Lee's Birthday/State Observation
 10/9/Leif Erikson Day/Observance
 10/10/First Day of Sukkot/Jewish holiday
@@ -220,15 +220,15 @@
 10/15/Sweetest Day/Observance
 10/16/Last Day of Sukkot/Jewish holiday
 10/17/Shmini Atzeret/Jewish holiday
-10/17/Boss's Day/Observance	 
+10/17/Boss's Day/Observance
 10/18/Simchat Torah/Jewish holiday
 10/18/Alaska Day/State holiday
 10/24/Diwali/Hindu Holiday
 10/28/Nevada Day/State holiday
 10/31/Halloween/Observance
-11/1/All Saints' Day/Christian	 
+11/1/All Saints' Day/Christian
 11/1/First Day of Native American Heritage Month/Annual observance
-11/2/All Souls' Day/Christian	 
+11/2/All Souls' Day/Christian
 11/6/New York City Marathon/Sporting event
 11/6/Daylight Saving Time ends/Daylight Saving Time
 11/8/Election Day/Observance
@@ -269,4 +269,4 @@
 12/26/Christmas Day(substitute)/Federal Holiday
 12/26/Day After Christmas Day/State holiday
 12/30/New Year's Eve observed/State holiday
-12/31/New Year's Eve/Observance	 
+12/31/New Year's Eve/Observance

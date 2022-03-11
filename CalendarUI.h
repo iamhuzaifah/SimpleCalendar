@@ -2,18 +2,20 @@
 #ifndef CALENDARUI_H_
 #define CALENDARUI_H_
 
-#define EVENTS_PER_DAY (5)
+#define EVENTS_PER_DAY (10)
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
 
-void initializeHolidays(FILE* file, struct event_Detail input_Array[12][31][EVENTS_PER_DAY]);
-void userMenu(struct event_Detail input_Array[12][31][EVENTS_PER_DAY]);
+void initializeArray(FILE* file, struct Data** holiday_Array, char file_Type);
+void userMenu(struct Data** holiday_Array, struct Data** event_Array);
+void dailyView(struct custom_Event_Day event_Array[12][31], int day, int month, int year);
 
 struct dates
 {
-	int time;
+	int time_start;
+	int time_end;
 	int year;
 };
 
@@ -29,10 +31,28 @@ struct custom_Event_Day
 	struct event_Detail details[EVENTS_PER_DAY];
 };
 
-struct custom_Event_Month
+struct daily_Event_obj 
 {
-	struct custom_Event_Day event_day[31];
+	int timeTracker;
+	int timeStart;
+	int timeEnd;
+	struct event_Detail detail;
 };
 
+
+struct event_Info
+{
+	char* name;
+	char* detail;
+	int time_Start;
+	int time_End;
+	int year;
+};
+
+struct Data
+{
+	struct event_Info* event_Array;
+	int size;
+};
 
 #endif // !CALENDARUI_H_

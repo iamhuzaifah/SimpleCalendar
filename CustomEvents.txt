@@ -1,0 +1,10 @@
+1/1/Dentist appointment/Cleaning/1400/1500/2022
+1/3/IPC test/Chapter 1-3/1800/1900/2022
+1/6/Date night/Wear a tux/1800/2200/2022
+1/7/Doctor appointment/Checkup/800/1100/2022
+1/7/Movies/Spiderman/1500/1900/2022
+1/13/Dentist appointment/Checkup/800/900/2022
+1/14/Interview/Google/700/1000/2022
+1/17/Concert/Kid Cudi/1900/2300/2022
+1/17/Meet my friend/present shopping/1200/1300/2022
+1/19/Alex birthday/dont forget present/1100/1900/2022

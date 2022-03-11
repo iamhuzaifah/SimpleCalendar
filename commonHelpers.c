@@ -6,11 +6,67 @@ Helper functions used throughout the program
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdbool.h>
-#include "CalendarUI.h"
+#include "commonHelpers.h"
+#include <windows.h>
 
 char* days[7] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
 char* months_Name[12] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
+// changes window size
+void changeWindowSize()
+{
+    HWND hWnd;
+    SetConsoleTitle("test");
+    hWnd = FindWindow(NULL, "test");
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD NewSBSize = {93, 50};//GetLargestConsoleWindowSize(hOut);
+    SMALL_RECT DisplayArea = { 0, 0, 0, 0 };
+
+    SetConsoleScreenBufferSize(hOut, NewSBSize);
+
+    DisplayArea.Right = NewSBSize.X - 1;
+    DisplayArea.Bottom = NewSBSize.Y - 1;
+
+    SetConsoleWindowInfo(hOut, TRUE, &DisplayArea);
+
+    ShowWindow(hWnd, SW_MAXIMIZE);
+}
+
+// displays the events that take place today
+//  --- NEED TO DO: add custom_Array in this
+void displayDayEvents(int day, int month, int year, struct Data** input_Array)
+{
+
+    if (input_Array[month - 1][day - 1].size > 0 /*need to add other array here*/)
+    {
+        printf("Events on %d-%d-%d\n", day, month, year);
+        printf("====================\n\n");
+    }
+    if (input_Array[month - 1][day - 1].size > 0)
+    {
+        printf("+---------------------------------------+\n");
+        printf("| Holidays/Special Events               |\n");
+        printf("+---------------------------------------+\n");
+
+        int i = 0;
+        while (input_Array[month - 1][day - 1].event_Array[i].name != NULL)
+        {
+            printf("| %-37s |\n", input_Array[month - 1][day - 1].event_Array[i].name);
+            i++;
+        }
+        printf("+---------------------------------------+\n");
+    }
+}
+
+// finds todays date
+void todayHeader(struct Data** input_Array)
+{
+    time_t t;
+    t = time(NULL);
+    struct tm tm = *localtime(&t);
+
+    displayDayEvents(tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900, input_Array);
+}
 
 // Take date and return 0 - 6 indicating what day falls on the date
 int dayofweek(int day, int month, int year)
@@ -35,19 +91,22 @@ int getMonthDays(int month, int year)
     return month_array[month - 1];
 }
 
+// changes print colur to blue
 void blue() 
 {
     printf("\033[0;34m");
 }
 
+// resets print colour back to white
 void reset_colour() 
 {
     printf("\033[0m");
 }
 
-void holidayDateDisplay(struct event_Detail input_Array[12][31][EVENTS_PER_DAY], int day, int month)
+// prints the day, utilizes different colours depending on what is needed
+void holidayDateDisplay(struct Data** input_Array, int day, int month)
 {
-    if (input_Array[month - 1][day - 1][0].name != NULL)
+    if (input_Array[month - 1][day - 1].size > 0)
     {
         blue();
         printf("%3i", day);
@@ -60,7 +119,7 @@ void holidayDateDisplay(struct event_Detail input_Array[12][31][EVENTS_PER_DAY],
 }
 
  // Take month and year and return a visual of the month with each date placed under the day it falls on
-void displayMonth(int month, int year)
+void displayMonth(int month, int year, struct Data** input_Array)
 {
     int month_Buffer[6][7] = { {0} };
     int count = dayofweek(1, month, year);
@@ -102,6 +161,7 @@ void displayMonth(int month, int year)
         {
             if (month_Buffer[i][c] != 0)
             {
+                holidayDateDisplay(input_Array, month_Buffer[i][c], month);
                 printf("%3i", month_Buffer[i][c]);
             }
             else
@@ -115,7 +175,7 @@ void displayMonth(int month, int year)
 }
 
  // Takes year input and display all the months in a 4 x 3 grid
-void displayYear(int year, struct event_Detail holiday_Array[12][31][EVENTS_PER_DAY])
+void displayYear(int year, struct Data** input_Array)
 {
     printf("+-------------------------------------------------------------------------------------------+\n");
     printf("| %47d                                           |\n", year);
@@ -174,7 +234,7 @@ void displayYear(int year, struct event_Detail holiday_Array[12][31][EVENTS_PER_
                 {
                     if (month_buffer[j][i][c] != 0)
                     {
-                        holidayDateDisplay(holiday_Array, month_buffer[j][i][c], month_counter + j);
+                        holidayDateDisplay(input_Array, month_buffer[j][i][c], month_counter + j);
                         //printf("%3i", month_buffer[j][i][c]);
                     }
                     else
@@ -195,6 +255,7 @@ void displayYear(int year, struct event_Detail holiday_Array[12][31][EVENTS_PER_
     printf("+-------------------------------------------------------------------------------------------+\n");
 }
 
+// clears input buffer
 void clearStandardInputBuffer(void)
 {
     do
