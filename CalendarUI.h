@@ -10,35 +10,7 @@
 
 void initializeArray(FILE* file, struct Data** holiday_Array, char file_Type);
 void userMenu(struct Data** holiday_Array, struct Data** event_Array);
-void dailyView(struct custom_Event_Day event_Array[12][31], int day, int month, int year);
-
-struct dates
-{
-	int time_start;
-	int time_end;
-	int year;
-};
-
-struct event_Detail
-{
-	char* name;
-	char* detail;
-};
-
-struct custom_Event_Day
-{
-	struct dates date[EVENTS_PER_DAY];
-	struct event_Detail details[EVENTS_PER_DAY];
-};
-
-struct daily_Event_obj 
-{
-	int timeTracker;
-	int timeStart;
-	int timeEnd;
-	struct event_Detail detail;
-};
-
+void dailyView(struct Data** input_Array, int day, int month, int year);
 
 struct event_Info
 {
@@ -53,6 +25,12 @@ struct Data
 {
 	struct event_Info* event_Array;
 	int size;
+};
+
+struct daily_Event_obj
+{
+	int timeTracker;
+	struct event_Info info;
 };
 
 #endif // !CALENDARUI_H_

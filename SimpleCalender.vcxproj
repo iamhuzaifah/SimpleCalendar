@@ -24,6 +24,7 @@
     <ProjectGuid>{8ed98cbc-8501-4ef8-8ec6-cfa42c8b7e95}</ProjectGuid>
     <RootNamespace>SimpleCalender</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SimpleCalendar</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -8,6 +8,7 @@ Helper functions used throughout the program
 #include <stdbool.h>
 #include "commonHelpers.h"
 #include <windows.h>
+#include <tchar.h>
 
 char* days[7] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
 char* months_Name[12] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
@@ -16,8 +17,9 @@ char* months_Name[12] = { "January", "February", "March", "April", "May", "June"
 void changeWindowSize()
 {
     HWND hWnd;
-    SetConsoleTitle("test");
-    hWnd = FindWindow(NULL, "test");
+    char* title = _T("Simple Calendar");
+    SetConsoleTitle(title);
+    hWnd = FindWindow(NULL, title);
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD NewSBSize = {93, 50};//GetLargestConsoleWindowSize(hOut);
     SMALL_RECT DisplayArea = { 0, 0, 0, 0 };
@@ -162,7 +164,6 @@ void displayMonth(int month, int year, struct Data** input_Array)
             if (month_Buffer[i][c] != 0)
             {
                 holidayDateDisplay(input_Array, month_Buffer[i][c], month);
-                printf("%3i", month_Buffer[i][c]);
             }
             else
             {
@@ -235,7 +236,6 @@ void displayYear(int year, struct Data** input_Array)
                     if (month_buffer[j][i][c] != 0)
                     {
                         holidayDateDisplay(input_Array, month_buffer[j][i][c], month_counter + j);
-                        //printf("%3i", month_buffer[j][i][c]);
                     }
                     else
                     {
@@ -281,7 +281,24 @@ int getInteger(void)
     return input;
 }
 
-int getMenuInt(int lower_bound, int upper_bound)
+int getIntPositive(int* num) {
+    int val;
+    do
+    {
+        scanf("%d", &val);
+        if (val <= 0)
+        {
+            printf("ERROR: Enter a positive value: ");
+        }
+    } while (val <= 0);
+    if (num != NULL)
+    {
+        *num = val;
+    }
+    return val;
+}
+
+int getRangeInt(int lower_bound, int upper_bound)
 {
     int rnge;
 
@@ -295,4 +312,11 @@ int getMenuInt(int lower_bound, int upper_bound)
         }
     } while (rnge < lower_bound || rnge > upper_bound);
     return rnge;
+}
+
+void pauseExecution(void)
+{
+    printf("\n<< Press ENTER to Continue... >>");
+    clearStandardInputBuffer();
+    putchar('\n');
 }

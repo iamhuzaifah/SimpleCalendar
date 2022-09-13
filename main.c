@@ -9,6 +9,7 @@
 
 int main(void)
 {
+    // changing window size for program
     changeWindowSize();
 
     // declaring the two arrays, one for holidays and one for custom events
@@ -35,7 +36,7 @@ int main(void)
     FILE* custom_File = fopen("CustomEvents.txt", "r");
     initializeArray(custom_File, custom_Array, 'C');
 
-    displayYear(2022, holiday_Array);
+    userMenu(holiday_Array, custom_Array);
 
     /*
     int count = 1;

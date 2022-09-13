@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "CalendarUI.h"
 #include "commonHelpers.h"
 #define CURR_YEAR 2022
@@ -84,11 +85,14 @@ void initializeArray(FILE *file, struct Data** input_Array, char file_Type)
 	
 }
 
-void dailyView(struct custom_Event_Day event_Array[12][31], int day, int month, int year)
+// view the saved dates for the inputted day
+void dailyView(struct Data** input_Array, int day, int month, int year)
 {
+	struct daily_Event_obj* time_Array = calloc(48, sizeof(struct daily_Event_obj));
+	int time_Track = 0, counter;
+	bool curr_Event = false;
 
-	struct daily_Event_obj time_Array[48] = { 0 };
-	int time_Track = 0;
+	// initializing the time in the array
 	for (int i = 0; i < 48; i++)
 	{
 		if (i % 2 == 1)
@@ -101,54 +105,95 @@ void dailyView(struct custom_Event_Day event_Array[12][31], int day, int month, 
 			time_Array[i].timeTracker = time_Track;
 			time_Track = time_Track + 30;
 		}
-		
-		
-
 	}
 
-	if (event_Array[month - 1][day - 1].details[0].name != NULL)
+	// importing data into the time day array
+	if (input_Array[month - 1][day - 1].event_Array[0].name != NULL)
 	{
 		for (int j = 0; j < EVENTS_PER_DAY; j++)
 		{
-			if (event_Array[month - 1][day - 1].date[j].year == CURR_YEAR)
+			if (input_Array[month - 1][day - 1].event_Array[j].year == CURR_YEAR)
 			{
 				for (int i = 0; i < 48; i++)
 				{
-					if (time_Array[i].timeTracker == event_Array[month - 1][day - 1].date[j].time_start)
+					if (time_Array[i].timeTracker == input_Array[month - 1][day - 1].event_Array[j].time_Start)
 					{
-						time_Array[i].timeStart = event_Array[month - 1][day - 1].date[j].time_start;
-						time_Array[i].timeEnd = event_Array[month - 1][day-1].date[j].time_end;
-						strcpy(time_Array[i].detail.name, event_Array[month - 1][day - 1].details[j].name);
+						time_Array[i].info.time_Start = input_Array[month - 1][day - 1].event_Array[j].time_Start;
+						time_Array[i].info.time_End = input_Array[month - 1][day-1].event_Array[j].time_End;
+
+						time_Array[i].info.name = malloc(strlen(input_Array[month - 1][day - 1].event_Array[j].name));
+						strcpy(time_Array[i].info.name, input_Array[month - 1][day - 1].event_Array[j].name);
 					}
 				}
 			}
 		}
 	}
 
-	printf("Day View - %i//%i//%i\n", day, month, year);
-	printf("---------------------------");
+	printf(" Day View - %i-%i-%i\n", day, month, year);
+	printf("--------------------------------+\n");
 	for (int  i = 0; i < 48; i++)
 	{
-		if (time_Array[i].detail.name != NULL)
+		// printing name of event
+		if (time_Array[i].info.name != NULL)
 		{
-			int counter = i;
-			printf("| %-20s |", time_Array[i].detail.name);
-			do
-			{
-				printf("|=========================|\n");
-				counter++;
-			}while (time_Array[i].timeEnd != time_Array[counter].timeTracker);
+			curr_Event = true;
+			counter = time_Array[i].info.time_End;
+			printf(" %-5d| %-23s |\n", time_Array[i].timeTracker, time_Array[i].info.name);
 		}
 		else
 		{
-			printf("|                         |\n");
+			// printing the equal signs to indicate the block is booked
+			if (curr_Event == true)
+			{
+				if (counter >= time_Array[i].timeTracker)
+				{
+					printf(" %-5d|=========================|\n", time_Array[i].timeTracker);
+				}
+
+				if (counter == time_Array[i].timeTracker)
+				{
+					curr_Event = false;
+				}
+			}
+			// printing free block 
+			else
+			{
+				printf(" %-5d|                         |\n", time_Array[i].timeTracker);
+			}
 		}
 	}
-	
-	
+
 	printf("");
 }
 
+// Adds event to array of custom events
+void addEvent(struct Data** event_Array)
+{
+	char name, detail;
+	int day, month, year, startTime, endTime;
+	system("cls");
+	printf("\n=======================================\n");
+	printf("=       Date Manager: Add Event       =\n");
+	printf("=======================================\n");
+
+	printf("Year: ");
+	getIntPositive(&year);
+
+	printf("Month: ");
+	
+	//getRangeInt(1, getMonthDays(year));
+	
+	printf("Name: \n");
+	scanf("%s", &name);
+
+	printf("Detail: ");
+	scanf("%s", &detail);
+
+	printf("Start Time: ");
+	//scanf("%d", );
+}
+
+// manage dates in custom event array
 void manageDateMenu()
 {
 	int menu_Input = 0;
@@ -164,7 +209,7 @@ void manageDateMenu()
 		printf("4. Event Search\n");
 		printf("0. Quit\n");
 		printf("Please Select an option listed Above: ");
-		menu_Input = getMenuInt(0, 4);
+		menu_Input = getRangeInt(0, 4);
 
 		switch (menu_Input)
 		{
@@ -173,15 +218,33 @@ void manageDateMenu()
 	} while (menu_Input != 0);
 }
 
+// main menu
 void userMenu(struct Data** holiday_Array, struct Data** event_Array)
 {
+	/*
+	TO DO:
+		- daily view
+			- finish the user input interface
+		- weekly view
+			- design UI
+			- finish code
+			- finish user input interface
+		- monthly view
+			- finish user input interface
+		- yearly view
+		- manage dates menu
+			- finish code
+			- user input interface
+
+		- NEED TO MAKE USER INPUT FOOL PROOF
+	*/
 	int menu_Input = 0;
 	do
 	{
 		system("cls");
 		todayHeader(holiday_Array);
 		printf("\n=======================================\n");
-		printf("=           Simple Calender           =\n");
+		printf("=           Simple Calendar           =\n");
 		printf("=======================================\n");
 		printf("1. Daily View\n");
 		printf("2. Weekly View\n");
@@ -190,14 +253,37 @@ void userMenu(struct Data** holiday_Array, struct Data** event_Array)
 		printf("5. Manage My Dates\n");
 		printf("0. Quit\n");
 		printf("Please Select an option listed Above: ");
-		menu_Input = getMenuInt(0, 5);
+		menu_Input = getRangeInt(0, 5);
 
 		switch (menu_Input)
 		{
+		// Daily View
 		case 1:
+			system("cls");
 			printf("Please enter a date (DD MM YYYY): ");
-			dailyView(event_Array, 1, 7, 2022);
+			dailyView(event_Array, 7, 1, 2022);
+			pauseExecution();
+
+		// Weekly View
+		case 2:
+			printf("Please enter a date. The week containing the date will be displayed");
+
+		// Monthly View
+		case 3:
+			printf("Please enter a month and year in format MM YYYY");
+
+		// Yearly View
+		case 4:
+			printf("Please enter a year in format YYYY");
+
+		// Manage my Dates Menu
+		case 5:
+			;
+		// Quit
+		case 0:
+			;
 		}
+		
 	} while (menu_Input != 0);
 	
 
